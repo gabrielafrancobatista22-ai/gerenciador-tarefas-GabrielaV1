@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu painel de tarefas </title>
+    <title>Meu painel de tarefas</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    
-    <div class="cartao-aplicacao">
-        <header class="cabecario-aplicacao">
-            <h1>  ˙⋆˚꩜｡ Minhas tarefas  ⋆˚꩜｡</h1>
-            <button class="botao-icone" id="botao-alternar-tema">
-                <i class="fa-solid fa-moon"></i>
-            </button>
-        </header>
-        <div class="caixa-entrada">
-            <input type="text"  id="campo-tarefas" placeholder="O que vamos fazer hoje?">
-            <button class="botao-principal" >
-                <i class="fa-solid fa-plus"></i> Adicionar
-            </button>
+    <div id="horario">00:00:00</div>
+    <div class="pagina-gerenciador">
+        <div class="cartao-aplicacao">
+            <header class="cabecario-aplicacao">
+                <h1>˙⋆˚꩜｡ Minhas tarefas ⋆˚꩜｡</h1> <button class="botao-icone" id="botao-alternar-tema"> <i
+                        class="fa-solid fa-moon"></i> </button>
+            </header>
+            <div class="caixa-entrada"> <input type="text" id="campo-tarefas" placeholder="O que vamos fazer hoje?">
+                <button class="botao-principal"> <i class="fa-solid fa-plus"></i> Adicionar </button> </div>
+            <div class="data-bonita" id="data-bonita"> <span class="data-icone">♡</span> <span id="data-atual">
+                    Carregando data... </span> </div>
+            <ul class="lista-tarefas" id="lista-tarefas"> </ul>
+            <footer class="rodape-aplicacao"> <span id="contador-tarefas"> 0 tarefas na lista </span> </footer>
         </div>
-        <ul class="lista-tarefas" id="lista-tarefas">
-            <!-- Ás tarefas serão inseridas dinamicamente pelo Js -->
-        </ul>
-        <footer class="rodape-aplicacao">
-            <span id="contador-tarefas">0 tarefas na lista</span>
-        </footer>
+        <div id="linkApresentar"> <a href="index2.html"> Apresentação </a> </div>
     </div>
     <script src="script.js"></script>
-    
 </body>
+
 </html>

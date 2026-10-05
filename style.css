@@ -1,39 +1,59 @@
 :root {
-    --gradiente-fundo: linear-gradient(134deg, #a8edea 0%, #fed6e3 100%);
-    --fundo-cartao: #fff;
+    --fundo-cartao: #f8d1fd;
     --cor-texto: #2d3748;
-    --cor-primaria: #6c5ce7;
-    --cor-primaria-destaque: #5b4bc4;
+    --cor-primaria: #c05ce7;
+    --cor-primaria-destaque: #b64bc4;
     --cor-borda: #edf2f7;
     --cor-perigo: #ff7675;
     --cor-concluido: #a0aec0;
 }
 
-    body.modo-escuro {
-    --gradiente-fundo: linear-gradient(135deg, #001f3f 0%, #000000 100%);
-    --fundo-cartao: #0b1220;
+body.modo-escuro {
+    background-image: url(fundo.escuro.jpg);
+    background-size: cover;
+    --fundo-cartao: #350647;
     --cor-texto: #f7fafc;
     --cor-borda: #26364d;
 }
-
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     transition: background 0.3s, color 0.3s;
 }
 
 body {
-    background: var(--gradiente-fundo);
+    background-image: url(fundo.claro.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    color: var(--cor-texto);
 }
 
+#horario {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    z-index: 9999;
+}
+
+body.modo-escuro #horario {
+    color: white;
+}
+
+/* GERENCIADOR DE TAREFAS */
 .cartao-aplicacao {
     background: var(--fundo-cartao);
     color: var(--cor-texto);
@@ -158,6 +178,147 @@ input[type="text"]:focus {
     text-align: center;
 }
 
+.data-bonita {
+    position: fixed;
+    left: 50%;
+    bottom: 22px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(248, 209, 253, 0.88);
+    color: #7b2c91;
+    border: 1px solid rgba(192, 92, 231, 0.35);
+    box-shadow: 0 8px 25px rgba(80, 20, 100, 0.18);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9998;
+    white-space: nowrap;
+}
+
+.data-icone {
+    font-size: 17px;
+    line-height: 1;
+}
+
+body.modo-escuro .data-bonita {
+    background: rgba(53, 6, 71, 0.88);
+    color: #f3b8ff;
+    border-color: rgba(243, 184, 255, 0.25);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* PÁGINA DE APRESENTAÇÃO */
+.cartao-apresentacao {
+    width: 100%;
+    max-width: 650px;
+    background: var(--fundo-cartao);
+    color: var(--cor-texto);
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+    text-align: center;
+    animation: aparecer 0.6s ease;
+}
+
+.cartao-apresentacao h1 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: var(--cor-texto);
+}
+
+.foto-perfil {
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid var(--cor-primaria);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    margin-bottom: 25px;
+}
+
+pagina-gerenciador {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+#linkApresentar {
+    text-align: center;
+}
+
+#linkApresentar a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 12px;
+    background: var(--cor-primaria);
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(192, 92, 231, 0.25);
+}
+
+#linkApresentar a:hover {
+    background: var(--cor-primaria-destaque);
+    transform: translateY(-2px);
+}
+
+.foto-perfil:hover {
+    transform: scale(1.04);
+}
+
+.texto-apresentacao {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(192, 92, 231, 0.2);
+    border-radius: 15px;
+    padding: 18px;
+    margin-bottom: 20px;
+}
+
+body.modo-escuro .texto-apresentacao {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.texto-apresentacao h3 {
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+.divisor {
+    width: 70%;
+    height: 2px;
+    margin: 30px auto;
+    background: linear-gradient(to right, transparent, var(--cor-primaria), transparent);
+}
+
+.botao-voltar {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 13px 22px;
+    border-radius: 12px;
+    background: var(--cor-primaria);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(192, 92, 231, 0.25);
+}
+
+.botao-voltar:hover {
+    background: var(--cor-primaria-destaque);
+    transform: translateY(-2px);
+}
+
 @keyframes aparecer {
     from {
         opacity: 0;
@@ -167,5 +328,36 @@ input[type="text"]:focus {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 70px 15px 30px;
+    }
+
+    .cartao-apresentacao {
+        padding: 25px 18px;
+        border-radius: 20px;
+    }
+
+    .cartao-apresentacao h1 {
+        font-size: 1.4rem;
+    }
+
+    .foto-perfil {
+        width: 150px;
+        height: 150px;
+    }
+
+    .texto-apresentacao h3 {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .data-bonita {
+        bottom: 14px;
+        font-size: 12px;
+        padding: 9px 14px;
     }
 }

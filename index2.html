@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+    <div id="horario">00:00:00</div>
+    <main class="cartao-apresentacao">
+        <h1>˙⋆˚꩜｡ Quem sou eu? ⋆˚꩜｡</h1> <img src="minha.foto.webp" alt="Foto de Gabriela" class="foto-perfil">
+        <div class="texto-apresentacao">
+            <h3> Meu nome é Gabriela Franco Batista, estou no segundo ano do ensino médio junto ao técnico em
+                Desenvolvimento de Sistemas. </h3>
+        </div>
+        <div class="divisor"></div>
+        <h1>˙⋆˚꩜｡ Sobre o gerenciador de tarefas ⋆˚꩜｡</h1>
+        <div class="texto-apresentacao">
+            <h3> O professor Marcelo pediu um gerenciador de tarefas em lista, que os botões de adicionar, excluir e
+                marcar como concluído funcionassem, além de deixar o site estilizado e com a nossa cara. </h3>
+            <h3> Foi isso que eu fiz. Adicionei um fundo claro e escuro na cor roxa, deixei a letra e os elementos
+                bonitinhos e personalizei o site do meu jeito. </h3>
+        <div class="link-gerenciador"> <h3> <a href="index.html"> Voltar para o gerenciador de tarefas </a> </h3> </div>
+    </main>
+    <script> const horario = document.getElementById("horario"); function atualizarHorario()
+        { const agora = new Date(); const horas = String(agora.getHours()).padStart(2, "0"); const minutos = String(agora.getMinutes()).padStart(2, "0"); const segundos = String(agora.getSeconds()).padStart(2, "0"); horario.textContent = `${horas}:${minutos}:${segundos}`; } atualizarHorario(); setInterval(atualizarHorario, 1000); </script>
+</body>
+
+</html>

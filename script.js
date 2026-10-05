@@ -22,11 +22,24 @@ class Tarefa {
         this.#concluida = !this.#concluida;
     }
 }
+const horario = document.getElementById("horario");
+
+function atualizarHorario() {
+    const agora = new Date();
+
+    const horas = String(agora.getHours()).padStart(2, "0");
+    const minutos = String(agora.getMinutes()).padStart(2, "0");
+    const segundos = String(agora.getSeconds()).padStart(2, "0");
+
+    horario.textContent = `${horas}:${minutos}:${segundos}`;
+}
+
+atualizarHorario();
+setInterval(atualizarHorario, 1000);
 
 
+ 
 const listaDeTarefas = [];
-
-
 const campoTarefas = document.getElementById("campo-tarefas");
 const listaTarefas = document.getElementById("lista-tarefas");
 const contadorTarefas = document.getElementById("contador-tarefas");
@@ -175,7 +188,24 @@ function atualizarContador() {
     }
 
 }
+const elementoDataAtual = document.getElementById("data-atual");
 
+function atualizarDataBonita() {
+    const agora = new Date();
+
+    const dataFormatada = agora.toLocaleDateString("pt-BR", {
+        weekday: "long",
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    });
+
+    elementoDataAtual.textContent =
+        dataFormatada.charAt(0).toUpperCase() + dataFormatada.slice(1);
+}
+
+atualizarDataBonita();
+setInterval(atualizarDataBonita, 60000);
 
 botaoTema.addEventListener("click", function () {
 
